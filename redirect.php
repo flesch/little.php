@@ -5,9 +5,9 @@
 	header('Cache-Control: no-cache, must-revalidate');
 	header(sprintf('Expires: %s', gmdate('D, d M Y H:i:s T', strtotime('+1 second'))));
 	header(sprintf('Last-Modified: %s', gmdate('D, d M Y H:i:s T')));
-	header('X-Powered-By: api.fles.ch');
+	header('X-Powered-By: http://github.com/johnflesch/little.php');
 
-	$request = ltrim($_SERVER['REQUEST_URI'], '/');
+	$request = trim($_SERVER['REQUEST_URI'], '/');
 	$token = str_replace('+', '', $request);
 
 	$urls = file('urls.cache', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
